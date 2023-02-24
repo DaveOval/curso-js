@@ -34,4 +34,4 @@ console.log(persona);
 function imprimeArgumentos(){
     console.log( arguments)
 }
-imprimeArgumentos()
+imprimeArgumentos(10, true, false, 'Fernando', 'Hola');
