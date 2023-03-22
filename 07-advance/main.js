@@ -2,6 +2,7 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import { enviromentsComponent } from './src/concepts/01-envirements';
 import { CallbacksComponent } from './src/concepts/02-callbacks';
+import { promiseComponent } from './src/concepts/03-promise';
 
 
 document.querySelector('#app').innerHTML = `
@@ -22,5 +23,6 @@ document.querySelector('#app').innerHTML = `
 const element = document.querySelector('.card')
 
 // enviromentsComponent(element)
-CallbacksComponent(element)
+// CallbacksComponent(element)
+promiseComponent(element)
 
