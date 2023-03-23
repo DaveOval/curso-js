@@ -26,20 +26,29 @@ export const promiseComponent = ( element ) => {
         `;
     }
 
-    //Promise.add
     const id1 = '5d86371fd55e2e2a30fe1ccb1'
     const id2 = '5d86371fd55e2e2a30fe1ccb2'
+    
+    
+    Promise.all([ 
+        finHero(id1),
+        finHero(id2)
+     ])
+     .then( ([hero1, hero2]) => renderTwoHeroes(hero1, hero2))
+     .catch(renderError)
+    
+    //!Forma2
+    // let hero1;
+    // finHero(id1)
+    //     .then( hero => {
+    //         hero1 = hero;
+    //         return finHero(id2);
+    //     }).then(hero2 => {
+    //         renderHero(hero1, hero2);
+    //     })
+    //     .catch(renderError);
 
-    let hero1;
-
-    finHero(id1)
-        .then( hero => {
-            hero1 = hero;
-            return finHero(id2);
-        }).then(hero => {
-            
-        })
-
+    //!Forma1
     // `finHero(id1)
     //     .then((hero1) => {
     //         finHero(id2)
