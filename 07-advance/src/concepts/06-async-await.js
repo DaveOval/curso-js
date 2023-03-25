@@ -6,14 +6,21 @@
 import { heroes } from "../data/heros"
 
 
-export const asyncAwaitComponent = ( element ) => {
+export const asyncAwaitComponent = async( element ) => {
 
     const id1 = '5d86371f2343e37870b91ef1'; 
     const id2 = '5d86371f25a058e5b1c8a65e';
 
-    element.innerHTML = `hero1 / hero2`;
+    try{
+        const hero1 = await finHero(id1);
+        const hero2 = await finHero(id2);
+    
+        element.innerHTML = `${hero1.name} / ${hero2.name}`;
 
-
+    }catch(error) {
+        element.innerHTML = error;
+    }
+    
 
 }
 
